@@ -1,8 +1,29 @@
+import java.util.Scanner;
+
 public class array {
     public static void main(String[] args) {
-        int marks[];
-        marks[]= {1,9,23,43,2,4};
+        int arr[];
+        arr = new int[5];
+        Scanner in = new Scanner(System.in);
 
-        System.out.println(marks[6]);
+        for (int i = 0; i < 5; i++) {
+            arr[i] = in.nextInt();
+        }
+        System.out.println("enter the element to search");
+        int s = in.nextInt();
+
+        for(int i =0;i<5;i++)
+        {
+            if(s==arr[i])
+                System.out.println(i);
+        }
+    /*
+        for (int i = 0; i < 5; i++)
+        {
+            System.out.println(arr[i]);
+        }
+    */
+
+
     }
 }
