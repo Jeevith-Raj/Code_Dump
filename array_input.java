@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class array_input {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("What is your fav color?");
+        System.out.println("Enter the size");
         int n = in.nextInt();
         int[] arr = new int[n];
         for(int i =0;i<n;i++)
