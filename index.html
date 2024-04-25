@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Storage</title>
+</head>
+<style media="screen">
+    input,button{
+        padding: 7px;
+        height: 40px;
+    }
+
+    fieldset{
+        margin-bottom: 20px;
+    }
+
+</style>
+<body>
+
+    <h2 id="title">Local storage</h2>
+    <fieldset>
+        <legend>Insert Data</legend>
+        <input type="text" id="inputkey" placeholder="Enter key...">
+        <input type="text" id="inputvalue" placeholder="Enter key...">
+        <button type="button" id="insert">Insert Data</button>
+    </fieldset>
+    <fieldset>
+        <legend>
+            local storage output
+        </legend>
+        <div id="lsoutput"></div>
+    </fieldset>
+    
+</body>
+
+<script type="text/javascript">
+    const inputkey = document.getElementById("inputkey");
+    const inputvalue = document.getElementById("inputvalue");
+    const btnInsert = document.getElementById("insert");
+    const lsoutput = document.getElementById("lsoutput");
+
+
+    btnInsert.addEventListener("click",funtion);
+
+    function funtion(){
+        const key= inputkey.value;
+        const value = inputvalue.value;
+
+        if(key && value){
+            localStorage.setItem(key,value);
+            location.reload();
+        }
+    }
+
+    for(let i=0;i<localStorage.length;i++){
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+
+        lsoutput.innerHTML += `${key}: ${value}`;
+
+    }
+
+
+</script>
+
+</html>
